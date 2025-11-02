@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: 'products'
+    static_configs:
+      - targets: ['products:8080']
+    metrics_path: '/metrics'
+
+  - job_name: 'notifications'
+    static_configs:
+      - targets: ['notifications:8081']
+    metrics_path: '/metrics'
+
